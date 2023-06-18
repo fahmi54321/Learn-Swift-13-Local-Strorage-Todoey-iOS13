@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VaX-C0-3Zy">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Todoey-->
+        <scene sceneID="CCU-VC-rnP">
+            <objects>
+                <tableViewController id="0DP-Hv-M7J" customClass="TodoListViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="M72-LT-3vH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="6dP-4d-f8k">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="0DP-Hv-M7J" id="DtL-aS-ExB"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoItemCell" id="Bav-tD-peM">
+                                <rect key="frame" x="0.0" y="94" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bav-tD-peM" id="fAg-Cf-ni8">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0DP-Hv-M7J" id="b5v-A1-kHY"/>
+                            <outlet property="delegate" destination="0DP-Hv-M7J" id="l5G-hY-xqL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Todoey" id="HSv-Lj-Afa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jv8-l6-Zj2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="0DP-Hv-M7J" id="8be-6H-3TU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="6dP-4d-f8k" id="UXI-SG-T8q"/>
+                        <outlet property="searchDisplayController" destination="AsI-CS-nLi" id="FUW-eu-Qxc"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQU-j2-Lyw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="wZP-MY-Yha">
+                    <connections>
+                        <outlet property="delegate" destination="0DP-Hv-M7J" id="Bnw-nl-wUp"/>
+                        <outlet property="searchContentsController" destination="0DP-Hv-M7J" id="oUS-Aw-FuY"/>
+                        <outlet property="searchResultsDataSource" destination="0DP-Hv-M7J" id="Aab-er-Icy"/>
+                        <outlet property="searchResultsDelegate" destination="0DP-Hv-M7J" id="78r-nJ-7Xi"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="O1C-qv-2an">
+                    <connections>
+                        <outlet property="delegate" destination="0DP-Hv-M7J" id="MD5-7l-9UK"/>
+                        <outlet property="searchContentsController" destination="0DP-Hv-M7J" id="faU-t3-P98"/>
+                        <outlet property="searchResultsDataSource" destination="0DP-Hv-M7J" id="URC-Zk-jjX"/>
+                        <outlet property="searchResultsDelegate" destination="0DP-Hv-M7J" id="YtL-DN-bUQ"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="AsI-CS-nLi">
+                    <connections>
+                        <outlet property="delegate" destination="0DP-Hv-M7J" id="Rh4-05-odg"/>
+                        <outlet property="searchBar" destination="6dP-4d-f8k" id="ezU-eg-AMi"/>
+                        <outlet property="searchContentsController" destination="0DP-Hv-M7J" id="7MS-Ts-Azr"/>
+                        <outlet property="searchResultsDataSource" destination="0DP-Hv-M7J" id="trJ-Uz-sXC"/>
+                        <outlet property="searchResultsDelegate" destination="0DP-Hv-M7J" id="ebz-5d-gXk"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1483.206106870229" y="-70.422535211267615"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Em7-YB-AQS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VaX-C0-3Zy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eSj-ft-dJy">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="tintColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0DP-Hv-M7J" kind="relationship" relationship="rootViewController" id="awa-YW-5W1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jCh-zX-6gV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="556.48854961832058" y="-70.422535211267615"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
